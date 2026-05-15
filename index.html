@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CertTracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="profile-hero">
+  <div class="profile-card">
+    <div class="avatar-box">
+      <img src="https://placehold.co/160x160/2563eb/ffffff?text=TH" alt="Trung Hiếu">
+    </div>
+
+    <div class="profile-info">
+      <span class="profile-label">Personal Certification Portfolio</span>
+      <h1>Trung Hiếu</h1>
+      <p class="profile-role">Frontend Developer • UI/UX Learner • Cloud Beginner</p>
+
+      <p class="profile-bio">
+        Sinh viên định hướng phát triển Frontend, quan tâm đến giao diện web hiện đại,
+        trải nghiệm người dùng và quản lý kỹ năng thông qua chứng chỉ.
+      </p>
+
+      <div class="profile-links">
+        <span>📧 mongkobiripface@gmail.com</span>
+        <span>📍 Vietnam</span>
+        <span>🎓 Information Technology</span>
+      </div>
+    </div>
+
+    <a href="admin.html" class="admin-link">Admin</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="toolbar">
+    <input type="text" id="searchInput" placeholder="Tìm chứng chỉ, kỹ năng, đơn vị cấp...">
+
+    <select id="fieldFilter">
+      <option value="">Tất cả lĩnh vực</option>
+    </select>
+
+    <select id="sortSelect">
+      <option value="expiryAsc">Sắp hết hạn trước</option>
+      <option value="issueDesc">Mới cấp trước</option>
+      <option value="nameAsc">Tên A-Z</option>
+    </select>
+  </section>
+
+  <section id="summaryBox" class="summary"></section>
+  <section class="skill-progress-box">
+  <h2>Skill Overview</h2>
+
+  <div class="progress-item">
+    <div>
+      <span>Frontend Development</span>
+      <strong>90%</strong>
+    </div>
+    <div class="progress-bar">
+      <span style="width:90%"></span>
+    </div>
+  </div>
+
+  <div class="progress-item">
+    <div>
+      <span>UI/UX Design</span>
+      <strong>75%</strong>
+    </div>
+    <div class="progress-bar">
+      <span style="width:75%"></span>
+    </div>
+  </div>
+
+  <div class="progress-item">
+    <div>
+      <span>Cloud Computing</span>
+      <strong>60%</strong>
+    </div>
+    <div class="progress-bar">
+      <span style="width:60%"></span>
+    </div>
+  </div>
+
+  <div class="progress-item">
+    <div>
+      <span>Database & Tools</span>
+      <strong>70%</strong>
+    </div>
+    <div class="progress-bar">
+      <span style="width:70%"></span>
+    </div>
+  </div>
+</section>
+
+  <section id="skillStatsBox" class="skill-stats"></section>
+
+  <section id="alertBox" class="alert-box"></section>
+
+  <section id="certList" class="card-grid"></section>
+
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/public.js"></script>
+
+</body>
+</html>

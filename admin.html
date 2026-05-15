@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - CertTracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="loginBox" class="login-page">
+  <div class="login-card">
+    <h1>🔐 Admin Login</h1>
+    <p>Đăng nhập để quản lý chứng chỉ</p>
+
+    <input type="password" id="adminPassword" placeholder="Nhập mật khẩu admin">
+
+    <button onclick="loginAdmin()" class="btn">
+      Đăng nhập
+    </button>
+
+    <p class="login-note">Mật khẩu demo: <strong>admin123</strong></p>
+  </div>
+</div>
+
+<div id="adminContent" class="hidden">
+
+<header class="hero">
+  <div>
+    <h1>⚙️ CertTracker Admin</h1>
+    <p>Quản lý chứng chỉ & portfolio kỹ năng</p>
+  </div>
+
+  <div class="hero-actions">
+    <a href="index.html" class="admin-link">Public</a>
+    <button onclick="logoutAdmin()" class="logout-btn">Đăng xuất</button>
+  </div>
+</header>
+
+<main class="container">
+
+  <form id="certForm" class="admin-form">
+    <input type="hidden" id="certId">
+
+    <input type="text" id="title" placeholder="Tên chứng chỉ" required>
+    <input type="text" id="issuer" placeholder="Đơn vị cấp" required>
+    <input type="text" id="field" placeholder="Lĩnh vực" required>
+    <input type="text" id="skills" placeholder="Kỹ năng" required>
+
+    <input type="date" id="issueDate" required>
+    <input type="date" id="expiryDate" required>
+
+    <input type="text" id="credentialUrl" placeholder="Link credential">
+    <input type="text" id="image" placeholder="Link ảnh">
+
+    <textarea id="description" placeholder="Mô tả"></textarea>
+
+    <div class="form-actions">
+      <button type="submit" class="btn">
+        Lưu chứng chỉ
+      </button>
+
+      <button type="button" onclick="cancelEdit()" class="cancel-btn">
+        Hủy sửa
+      </button>
+    </div>
+  </form>
+
+  <button onclick="exportSkills()" class="btn export-btn">
+    Export Skills CSV
+  </button>
+
+  <section id="adminList" class="admin-list"></section>
+
+</main>
+
+</div>
+
+<div id="confirmModal" class="modal hidden">
+  <div class="modal-box">
+    <h2>⚠ Xác nhận xóa</h2>
+    <p>Bạn có chắc chắn muốn xóa chứng chỉ này không?</p>
+
+    <div class="modal-actions">
+      <button id="confirmDeleteBtn" class="delete-btn">Xóa</button>
+      <button onclick="closeModal()" class="cancel-btn">Hủy</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+</html>
